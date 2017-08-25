@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="hand" name="hand">
+        <div id="wrist"></div>
+        <div id="palm"></div>
+        <div id="thumb"></div>
+        <div id="finger-1" class="finger"></div>
+        <div id="finger-2" class="finger"></div>
+        <div id="finger-3" class="finger"></div>
+        <div id="finger-4" class="finger"></div>
+    </div>
+</body>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/systemjs/0.20.18/system.js"></script>
+<!--<script type="text/javascript" src="./lib/index.js"></script>-->
+<script>
+    SystemJS.import('./lib/index.js').then(function (m) {
+        //console.log(new m.default().showGood);
+        (function($){
+            $.fn.extend({
+                "showPlus":new m.default().showGood
+            });
+        })($);
+        let handDom = $('#hand');
+        handDom.on('click', function() {
+            $(this).showPlus({
+                color:"red",
+                str:"+1",
+                callback:function(){
+                    console.log("老师辛苦了！");
+                }
+            });
+        });
+    });
+</script>
+</html>
