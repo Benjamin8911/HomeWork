@@ -14,7 +14,7 @@
 3. 文本
 
 链接
-[百度](www.baidu.com)
+[百度](http://www.baidu.com)
 
 图片
 ![](http://img07.tooopen.com/images/20170301/tooopen_sy_200052155387.jpg)
